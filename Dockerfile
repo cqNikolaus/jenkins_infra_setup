@@ -11,7 +11,7 @@ RUN git init && \
     git remote add origin https://github.com/cqNikolaus/jenkins_automation.git && \
     git config core.sparseCheckout true && \
     echo "requirements.txt" >> .git/info/sparse-checkout && \
-    git pull origin modular-split
+    git pull origin main
 
 
 RUN pip install --no-cache-dir --upgrade -r requirements.txt
