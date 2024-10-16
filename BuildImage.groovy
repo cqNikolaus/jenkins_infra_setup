@@ -1,5 +1,5 @@
 node() {
   checkout scm
   sh "ls -lart"
-  sh "docker build -t python-build ."
+  sh "docker build --no-cache -t python-build ."
 }
