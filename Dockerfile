@@ -6,6 +6,8 @@ RUN apt-get update && \
     
 WORKDIR /code
 
+RUN rm -f requirements.txt
+
 RUN git init && \
     git remote add origin https://github.com/cqNikolaus/jenkins_automation.git && \
     git config core.sparseCheckout true && \
