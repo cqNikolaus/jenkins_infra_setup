@@ -6,6 +6,7 @@ RUN apt-get update && \
     
 WORKDIR /code
 
+ARG CACHEBUST=1
 
 RUN git init && \
     git remote add origin https://github.com/cqNikolaus/jenkins_automation.git && \
