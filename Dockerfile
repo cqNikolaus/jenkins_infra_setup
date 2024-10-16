@@ -6,13 +6,10 @@ RUN apt-get update && \
     
 WORKDIR /code
 
-RUN rm -f requirements.txt
 
-RUN git init && \
-    git remote add origin https://github.com/cqNikolaus/jenkins_automation.git && \
-    git config core.sparseCheckout true && \
-    echo "requirements.txt" >> .git/info/sparse-checkout && \
-    git pull origin main
+RUN git clone --depth 1 https://github.com/cqNikolaus/jenkins_automation.git . && \
+    cp jenkins_automation/requirements.txt /code/requirements.txt && \
+    rm -rf jenkins_automation
 
 
 RUN pip install --no-cache-dir --upgrade -r requirements.txt
